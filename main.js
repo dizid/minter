@@ -48,7 +48,7 @@ async function submit(){
         userAddress: user.get('ethAddress'),
         tokenType: 'ERC721',
         tokenUri: 'ipfs://' + metadataHash,
-        royaltiesAmount: 1000, // 0.05% royalty. Optional  Mf: 1000 = 10%?
+        royaltiesAmount: 500, // 5% royalty
     })
     console.log(res);
     document.querySelector('#success_message').innerHTML = 

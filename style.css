@@ -1,0 +1,29 @@
+body{
+    text-align: center;
+    background-color: #04001a;
+    color: rgb(194, 216, 235);
+}
+#app{
+    /* display: none; */
+    margin-top: 10px;
+    height: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    color: #424242;
+}
+.form_element{
+    margin-top: 20px;
+}
+.title{
+    color: #fff;
+    margin-top: 14px;
+    font-size: xx-large;
+
+}
+#success_message{
+    background-color: #c4ffc4;
+    border: 1px solid #0fcf0f;
+    border-radius: 4px;
+    display: none;
+}

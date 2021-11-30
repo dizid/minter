@@ -1,64 +1,39 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
+
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Create your own NFT </title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-
     <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
-    <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet"/>
-    <!-- MDB -->
-    <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"></script>
 
-
-    <style>
-        body{
-            text-align: center;
-            background-color: #04001a;
-        }
-        #app{
-            display: none;
-            margin-top: 10px;
-            height: 400px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 20px;
-            color: #424242;
-        }
-        .form_element{
-            margin-top: 20px;
-        }
-        .title{
-            color: #fff;
-            margin-top: 10px;
-        }
-        #success_message{
-            background-color: #c4ffc4;
-            border: 1px solid #0fcf0f;
-            border-radius: 4px;
-            display: none;
-        }
-    </style>
+ <!-- Bootstrap CSS -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+ <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
   <body>
+       <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
         <div class="container">
             <div class="row">
-                <div class="title">Magic NFT Minter</div><br><br>
+                <div class="title">Marc's Magic Minter</div><br><br>
 
             <div>Mick, maak hier je NFT op t Rinkeby testnet. Eerst ff <a href="https://faucets.chain.link/rinkeb"><b>hier</b></a> gratis 0.1 ETH voor 
                 Rinkeby halen.<br>
-            <div>Je NFT komt automatisch op <a href="https://rinkeby.rarible.com/">Rarible</a> ook weer inloggen met Metamask op Rinkeby</div><br>
+            <div>Je NFT komt automatisch op <a href="https://rinkeby.rarible.com/">Rarible</a> (SELL IT!) --> zet Metamask op Rinkeby</div><br>
 
-                <div id="app" class="col-md-5 offset-md-3">
+                <div id="app" class="col-md-6 offset-md-3">
                     <div id="success_message">
                         
                     </div>
