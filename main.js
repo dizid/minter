@@ -56,7 +56,7 @@ async function submit(){
     document.querySelector('#success_message').style.display = "block";
     setTimeout(() => {
         document.querySelector('#success_message').style.display = "none";
-    }, 5000)
+    }, 50000)
 }
 
 login()
