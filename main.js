@@ -8,7 +8,7 @@ let user = Moralis.User.current();
 async function login() {
   if (!user) {
    try {
-      user = await Moralis.authenticate({ signingMessage: "Hello World!" })
+      user = await Moralis.authenticate({ signingMessage: "You are connected with your wallet!" })
       initApp();
    } catch(error) {
      console.log(error)
@@ -52,7 +52,7 @@ async function submit(){
     })
     console.log(res);
     document.querySelector('#success_message').innerHTML = 
-        `NFT minted. <a href="https://rinkeby.rarible.com/token/${res.data.result.tokenAddress}:${res.data.result.tokenId}">View NFT`;
+        `NFT minted. <a href="https://rinkeby.rarible.com/token/${res.data.result.tokenAddress}:${res.data.result.tokenId}">View your NFT`;
     document.querySelector('#success_message').style.display = "block";
     setTimeout(() => {
         document.querySelector('#success_message').style.display = "none";
