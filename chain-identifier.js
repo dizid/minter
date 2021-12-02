@@ -14,7 +14,7 @@ function displayMessage(messageType, message){
 async function checkWeb3(){
     const ethereum = window.ethereum;
     if(!ethereum || !ethereum.on) {
-        displayMessage("01", "This App Requires MetaMask, Please Install MetaMask");
+        displayMessage("01", "This App Requires MetaMask, <a href=\"https://metamask.io/\">Install MetaMask</a>");
     }
     else{
         //displayMessage("00", "Metamask is Installed");
