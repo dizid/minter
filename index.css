@@ -1,0 +1,78 @@
+/* MINT CSS */
+
+body{
+    text-align: center;
+    background-color: #04001a;
+    color: rgb(194, 216, 235);
+}
+#app{
+    /* display: none; */
+    margin-top: 10px;
+    height: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    color: #424242;
+}
+.form_element{
+    margin-top: 20px;
+}
+.title{
+    color: #fff;
+    margin-top: 14px;
+    font-size: xx-large;
+
+}
+#success_message{
+    background-color: #c4ffc4;
+    border: 1px solid #0fcf0f;
+    border-radius: 4px;
+    display: none;
+}
+
+
+/* DEX CSS */
+
+#window{
+    margin-top: 50px;
+    background-color: #000;
+    color: #fff;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px black;
+}
+.swapbox_select {
+    width: 50%;
+    float: left;
+}
+.swapbox{
+    overflow: auto;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #2f2f2f;
+    border-radius: 20px;
+    border: 1px solid #565656;
+}
+.token_select{
+    padding:5px 0;
+}
+.token_select:hover{
+    background-color: #464646;
+    cursor: pointer;
+    
+}
+.token_list_img, .token_image{
+    width: 40px;
+}
+.modal-body{
+    height: 600px;
+    overflow: scroll;
+}
+.token_row{
+    padding: 5px 10px;
+}
+.token_row:hover{
+    background-color: #e4e4e4;
+    cursor: pointer;
+}
+

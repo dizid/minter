@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create your own NFT </title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Dikke DApp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="mint.html">Mint</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="dex.html">Dikke DEX</a>
+                </li>
+            </ul>
+            <button id="login_button" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Sign in with Metamask</button>
+        </div>
+      </nav>
+       <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+        <div class="container">
+            <div class="row">
+                <div class="title">Magic Money Minter</div><br><br>
+
+            <div>
+                    1. <b>PC/laptop ONLY (for now)</b>: Put your Metamask wallet on the <b>Rinkeby testnetwork</b>.<br>
+                    2. Go to <a href="https://faucets.chain.link/rinkeb"><b>the chainlink faucet</b></a> for your free 0.1 test-ETH on the ethereum Rinkeby testnet.<br>
+                    3. Create your NFT!<br>
+                    4. Your NFT will automatically be on <a href="https://rinkeby.rarible.com/">Rarible</a>. But it is NOT minted yet! Click the link that appears.<br>
+           </div><br>
+
+                <div id="app" class="col-md-6 offset-md-3">
+                    <div id="success_message">
+                        
+                    </div>
+                    <div class="form_element">
+                    <input class="form-control type="text" id="input_name" name="name" placeholder="Token name">
+                    </div>
+                    <div class="form_element">
+                    <input class="form-control type="text" id="input_description" name="description" placeholder="Description">
+                    </div>
+                    <div class="form_element">
+                    <input class="form-control" type="file" id="input_image" name="image" accept="image/png, image/jpeg">
+                    </div>
+                    <div class="form_element">
+                    <button class="btn btn-primary btn-lg btn-block" id="submit_button">Create NFT</button>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div>
+            Site by <a href="https://dizid.com">Dizid</a>
+        </div>
+    <script type="text/javascript" src="./main.js"></script>
+  </body>
+</html>
