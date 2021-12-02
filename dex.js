@@ -5,7 +5,7 @@ const appId = "rfnNsI3bNs3wnKsGEYPeZodvcEOUP84OFMJmevPs";
 let currentTrade = {};
 let currentSelectSide;
 let tokens;
-let blockchain = bsc  // options now: eth, bsc, polygon. Later: avalanche, solana, ...
+// let blockchain = bsc  // options now: eth, bsc, polygon. Later: avalanche, solana, ...
 
 // TODO: set this to currently connected chain AND show on screen
 
