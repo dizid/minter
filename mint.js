@@ -23,29 +23,28 @@ async function login() {
 const web3 = await Moralis.Web3.enable();
 
 // change to rinkeby // TEST mumbai
-const switchNetworkMumbai  = async () => {
+switchNetworkMumbai  = async function () {
   try {
     await web3.currentProvider.request({
       method: "wallet_switchEthereumChain",
-      params: [{ chainId: "0x13881" }],
+      params: [{ chainId: "0x4" }],
     });
   } catch (error) {
     if (error.code === 4902) {
       try {
-        await web3.currentProvider.request({
+        await web3.currentProvider.request({   // TODO chain info is wrong!!
           method: "wallet_addEthereumChain",
-          params: [
-          switchNetworkMumbai  {
-              chainId: "0x13881",
-              chainName: "Mumbai",
-              rpcUrls: ["https://rpc-mumbai.matic.today"],
-              nativeCurrency: {
-                name: "Matic",
-                symbol: "Matic",
-                decimals: 18,
-              },
-              blockExplorerUrls: ["https://explorer-mumbai.maticvigil.com"],
+          params: [{
+            chainId: "0x4",
+            chainName: "Rinkeby",
+            rpcUrls: ["https://rpc-mumbai.matic.today"],
+            nativeCurrency: {
+              name: "Rinkeby",
+              symbol: "Matic",
+              decimals: 18,
             },
+            blockExplorerUrls: ["https://explorer-mumbai.maticvigil.com"],
+          },
           ],
         });
       } catch (error) {
