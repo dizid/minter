@@ -18,6 +18,44 @@ async function login() {
     Moralis.enableWeb3();
     initApp();
   }
+
+// Needed?
+const web3 = await Moralis.Web3.enable();
+
+// change to rinkeby // TEST mumbai
+const switchNetworkMumbai  = async () => {
+  try {
+    await web3.currentProvider.request({
+      method: "wallet_switchEthereumChain",
+      params: [{ chainId: "0x13881" }],
+    });
+  } catch (error) {
+    if (error.code === 4902) {
+      try {
+        await web3.currentProvider.request({
+          method: "wallet_addEthereumChain",
+          params: [
+          switchNetworkMumbai  {
+              chainId: "0x13881",
+              chainName: "Mumbai",
+              rpcUrls: ["https://rpc-mumbai.matic.today"],
+              nativeCurrency: {
+                name: "Matic",
+                symbol: "Matic",
+                decimals: 18,
+              },
+              blockExplorerUrls: ["https://explorer-mumbai.maticvigil.com"],
+            },
+          ],
+        });
+      } catch (error) {
+        alert(error.message);
+      }
+    }
+  }
+}
+
+
 }
 
 function initApp(){
@@ -26,6 +64,10 @@ function initApp(){
 }
 
 async function submit(){
+
+    //('#spinner').show()  // MF show spinner
+    document.getElementById('spinner').style.display = 'inline';
+
     const input = document.querySelector('#input_image');
     let data = input.files[0]
     const imageFile = new Moralis.File(data.name, data)
@@ -51,6 +93,10 @@ async function submit(){
         royaltiesAmount: 500, // 5% royalty
     })
     console.log(res);
+
+    // $('#spinner').hide()  // MF hide spinner
+    document.getElementById('spinner').style.display = 'none';
+
     document.querySelector('#success_message').innerHTML = 
         `NFT minted. <a href="https://rinkeby.rarible.com/token/${res.data.result.tokenAddress}:${res.data.result.tokenId}">View your NFT`;
     document.querySelector('#success_message').style.display = "block";

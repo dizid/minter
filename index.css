@@ -76,3 +76,10 @@ body{
     cursor: pointer;
 }
 
+/* SPINNER on mint.html */
+
+#spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}

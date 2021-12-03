@@ -40,9 +40,9 @@ function getNetworkName(chainID){
         4:"Ethereum Rinkeby",
         5: "Goerli Test Network",
         42:"Kovan-testnetwerk",
-        56:"Binance Smart Chain Mainnet",
-        97:"Binance Smart Chain TESTnet",
-        137:"Matic Mainnet",
+        56:"Binance Smart Chain",
+        97:"BSC testnet",
+        137:"Polygon Matic Mainnet",
         250:"Fantom Opera",
         80001:"Polygon Mumbai Testnet"
     }

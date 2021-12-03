@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Create your own NFT </title>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://nft.tnxz.nl/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
@@ -14,7 +14,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">Dikke DApp</a>
+        <a class="navbar-brand" href="index.html">Dikke dApp</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -52,13 +52,17 @@
                 <div class="title">Magic Money Minter</div><br><br>
 
             <div>
-                    1. <b>Works on PC/laptop with Metamask installed OR Metamask browser on mobile (for now)</b>: Put your Metamask wallet on the <b>Rinkeby testnetwork</b>.<br>
-                    2. Go to <a href="https://faucets.chain.link/rinkeb"><b> the chainlink 'faucet'</b></a> for your free 0.1 test-ETH on the ethereum Rinkeby testnet.<br>
-                    3. Create your NFT! After clicking the button, wait about 6 seconds.<br>
-                    4. Your NFT will automatically be on <a href="https://rinkeby.rarible.com/">Rarible (again: Rinkeby testnet)</a>. Click the link that appears after creating your NFT.<br>
-                    5. Your NFT it is NOT minted yet, this will be done by the buyer.
+                    1. Go to <a href="https://faucets.chain.link/rinkeb"><b> for free 0.1 ETH.<br>
+                    2. Create your NFT!<br>
+                    3. NFT shows on <a href="https://rinkeby.rarible.com/">Rarible</a>.<br>
+                    4. Your NFT it is NOT minted yet, this will be done by the buyer. ('lazy minting')
            </div><br><br>
+<div>
+TEST <button onclick="switchNetworkMumbai()">
+  change to mumbai network (add if not present, add it)
+</button>
 
+</div>
                 <div id="app" class="col-md-6 offset-md-3">
                     <div id="success_message">
                         
@@ -74,6 +78,9 @@
                     </div>
                     <div class="form_element">
                     <button class="btn btn-primary btn-lg btn-block" id="submit_button">Create NFT</button>
+                    </div>
+                    <div id="spinner" style="display: none;">
+                      <img id="img-spinner" src="spinner.gif" alt="Creating NFT">
                     </div>
                 </div>
             </div>
