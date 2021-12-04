@@ -5,9 +5,7 @@ const appId = "rfnNsI3bNs3wnKsGEYPeZodvcEOUP84OFMJmevPs";
 let currentTrade = {};
 let currentSelectSide;
 let tokens;
-// let blockchain = bsc  // options now: eth, bsc, polygon. Later: avalanche, solana, ...
-
-// TODO: set this to currently connected chain AND show on screen
+// MF: let blockchain = bsc  // options now: eth, bsc, polygon. Later: avalanche, solana, ...
 
 async function init() {
   await Moralis.start({ serverUrl, appId });
@@ -16,6 +14,7 @@ async function init() {
   currentUser = Moralis.User.current();
   if (currentUser) {
     document.getElementById("swap_button").disabled = false;
+    console.log(user.get('ethAddress')) // TODO TEST remove later -- Uncaught (in promise) ReferenceError: user is not defined
   }
 }
 
@@ -65,14 +64,20 @@ function renderInterface() {
 async function login() {
   try {
     currentUser = Moralis.User.current();
+   // console.log(user.get('ethAddress')) // TODO TEST remove later
+
     if (!currentUser) {
-      currentUser = await Moralis.authenticate();
+      currentUser = await Moralis.authenticate().then(function (user) {
+        console.log(user.get('ethAddress'))
+      })
     }
     document.getElementById("swap_button").disabled = false;
   } catch (error) {
     console.log(error);
   }
 }
+
+
 
 function openModal(side) {
   currentSelectSide = side;

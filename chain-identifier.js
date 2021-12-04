@@ -1,3 +1,5 @@
+
+
 // CHECK and report CHAIN
 
 var web3;
@@ -14,7 +16,7 @@ function displayMessage(messageType, message){
 async function checkWeb3(){
     const ethereum = window.ethereum;
     if(!ethereum || !ethereum.on) {
-        displayMessage("01", "This DApp Requires the MetaMask wallet, <a href=\"https://metamask.io/\">Install MetaMask</a>");
+        displayMessage("01", "This DApp requires the MetaMask wallet, <a href=\"https://metamask.io/\">Install MetaMask</a>");
     }
     else{
         //displayMessage("00", "Metamask is Installed");
