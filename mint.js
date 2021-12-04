@@ -19,9 +19,7 @@ async function login() {
     initApp();
   }
 
-// Needed?
-const web3 = await Moralis.Web3.enable();
-
+// TEST click button to change network. PS: 
 // change to rinkeby // TEST mumbai
 switchNetworkMumbai  = async function () {
   try {
@@ -97,7 +95,7 @@ async function submit(){
     document.getElementById('spinner').style.display = 'none';
 
     document.querySelector('#success_message').innerHTML = 
-        `NFT minted. <a href="https://rinkeby.rarible.com/token/${res.data.result.tokenAddress}:${res.data.result.tokenId}">View your NFT`;
+        `NFT minted. <a href="https://rinkeby.rarible.com/token/${res.data.result.tokenAddress}:${res.data.result.tokenId}" target="blanc">View your NFT`;
     document.querySelector('#success_message').style.display = "block";
     setTimeout(() => {
         document.querySelector('#success_message').style.display = "none";
