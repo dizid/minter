@@ -1,7 +1,3 @@
-/** Connect to Moralis server: Learn on Mainnet */ 
-const serverUrl = "https://cchlbet7lnxn.usemoralis.com:2053/server";
-const appId = "rfnNsI3bNs3wnKsGEYPeZodvcEOUP84OFMJmevPs";
-
 let currentTrade = {};
 let currentSelectSide;
 let tokens;
@@ -14,7 +10,6 @@ async function init() {
   currentUser = Moralis.User.current();
   if (currentUser) {
     document.getElementById("swap_button").disabled = false;
-    console.log(user.get('ethAddress')) // TODO TEST remove later -- Uncaught (in promise) ReferenceError: user is not defined
   }
 }
 

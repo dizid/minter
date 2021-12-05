@@ -1,23 +1,17 @@
-/** Connect to Moralis server: Learn on Mainnet */ 
-const serverUrl = "https://cchlbet7lnxn.usemoralis.com:2053/server";
-const appId = "rfnNsI3bNs3wnKsGEYPeZodvcEOUP84OFMJmevPs";
-Moralis.start({ serverUrl, appId });
-let user = Moralis.User.current();
-
 /** Add from here down */
-async function login() {
-  if (!user) {
-   try {
-      user = await Moralis.authenticate({ signingMessage: "You are connected with your wallet!" })
-      initApp();
-   } catch(error) {
-     console.log(error)
-   }
-  }
-  else{
-    Moralis.enableWeb3();
-    initApp();
-  }
+// async function login() {
+//   if (!user) {
+//    try {
+//       user = await Moralis.authenticate({ signingMessage: "You are connected with your wallet!" })
+//       initApp();
+//    } catch(error) {
+//      console.log(error)
+//    }
+//   }
+//   else{
+//     Moralis.enableWeb3();
+//     initApp();
+//   }
 
 // TEST click button to change network. PS: 
 // change to rinkeby // TEST mumbai
@@ -52,8 +46,6 @@ switchNetworkMumbai  = async function () {
   }
 }
 
-
-}
 
 function initApp(){
     document.querySelector("#app").style.display = "block";
