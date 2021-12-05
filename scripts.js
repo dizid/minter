@@ -5,13 +5,14 @@ const serverUrl = "https://cchlbet7lnxn.usemoralis.com:2053/server";
 const appId = "rfnNsI3bNs3wnKsGEYPeZodvcEOUP84OFMJmevPs";
 Moralis.start({ serverUrl, appId });
 
-/** Add from here down */
+/** Login */
 async function login() {
   let user = Moralis.User.current();
   if (!user) {
    try {
       user = await Moralis.authenticate({ signingMessage: "Welcome to Dikke dApp" })
-      document.querySelector('#login_button').innerText = user.get('ethAddress'); 
+      document.querySelector('#login_button').innerText = user.get('ethAddress');  // Show eth address in login button
+     localStorage.setItem("Metamask_address", user.get('ethAddress')) // Put Metamask address in localstorage
       console.log(user)
       console.log(user.get('ethAddress'))
    } catch(error) {
@@ -20,14 +21,27 @@ async function login() {
   }
 }
 
-document.getElementById("login_button").onclick = login;
-document.getElementById("logout_button").onclick = logOut;
+
+//Check IF Metamask address is in localstorage and show in Login button
+const MMaddress = localStorage.getItem("Metamask_address")
+let user = Moralis.User.current();
+if (MMaddress && user) {
+  document.querySelector('#login_button').innerText = localStorage.getItem("Metamask_address")
+  console.log("MM adres", MMaddress )
+  }
+  else  {
+    login()
+  }
+
+/** Logout */
 async function logOut() {
   await Moralis.User.logOut();
+  document.querySelector('#login_button').innerText = "Sign in with Metamask"
   console.log("logged out");
 }
 
-
+document.getElementById("login_button").onclick = login;
+// document.getElementById("logout_button").onclick = logOut;
 
 /* CHECK and report on which CHAIN we are connected to */
 var web3;
@@ -44,10 +58,9 @@ function displayMessage(messageType, message){
 async function checkWeb3(){
     const ethereum = window.ethereum;
     if(!ethereum || !ethereum.on) {
-        displayMessage("01", "This DApp requires the MetaMask wallet, <a href=\"https://metamask.io/\">Install MetaMask</a>");
+        displayMessage("01", "This DApp requires the MetaMask wallet,<a href=\"https://metamask.io/\"> Install MetaMask</a>");
     }
     else{
-        //displayMessage("00", "Metamask is Installed");
         setWeb3Environment()
     }
 }
@@ -65,16 +78,8 @@ async function getNetwork(){
 
 function getNetworkName(chainID){
     networks = {
-        1:"Ethereum Mainnet",
-        3:"Ropsten testnetwerk",
-        4:"Ethereum Rinkeby",
-        5: "Goerli Test Network",
-        42:"Kovan-testnetwerk",
-        56:"Binance Smart Chain",
-        97:"BSC testnet",
-        137:"Polygon Matic Mainnet",
-        250:"Fantom Opera",
-        80001:"Polygon Mumbai Testnet"
+        1:"Ethereum Mainnet",3:"Ropsten testnetwerk",4:"Ethereum Rinkeby",5: "Goerli Test Network",
+        42:"Kovan-testnetwerk",56:"Binance Smart Chain",97:"BSC testnet",137:"Polygon Matic Mainnet",250:"Fantom Opera"
     }
     return networks[chainID];
 }
@@ -85,33 +90,4 @@ function monitorNetwork(){
     })
 }
 
-
-/* Function for including HTML on every page: topnavbar, footer, etc */
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /* Loop through a collection of all HTML elements: */
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      /* Make an HTTP request using the attribute value as the file name: */
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /* Remove the attribute, and call this function once more: */
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
-        }
-      }
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /* Exit the function: */
-      return;
-    }
-  }
-}
 

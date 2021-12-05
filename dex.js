@@ -2,8 +2,8 @@ let currentTrade = {};
 let currentSelectSide;
 let tokens;
 // MF: let blockchain = bsc  // options now: eth, bsc, polygon. Later: avalanche, solana, ...
-
-async function init() {
+ 
+/* async function init() {
   await Moralis.start({ serverUrl, appId });
   await Moralis.enableWeb3();
   await listAvailableTokens();
@@ -11,7 +11,23 @@ async function init() {
   if (currentUser) {
     document.getElementById("swap_button").disabled = false;
   }
-}
+} */
+
+/* async function login() {
+  try {
+    currentUser = Moralis.User.current();
+   // console.log(user.get('ethAddress')) // TODO TEST remove later
+
+    if (!currentUser) {
+      currentUser = await Moralis.authenticate().then(function (user) {
+        console.log(user.get('ethAddress'))
+      })
+    }
+    document.getElementById("swap_button").disabled = false;
+  } catch (error) {
+    console.log(error);
+  }
+} */
 
 async function listAvailableTokens() {
   const result = await Moralis.Plugins.oneInch.getSupportedTokens({
@@ -55,24 +71,6 @@ function renderInterface() {
     document.getElementById("to_token_text").innerHTML = currentTrade.to.symbol;
   }
 }
-
-async function login() {
-  try {
-    currentUser = Moralis.User.current();
-   // console.log(user.get('ethAddress')) // TODO TEST remove later
-
-    if (!currentUser) {
-      currentUser = await Moralis.authenticate().then(function (user) {
-        console.log(user.get('ethAddress'))
-      })
-    }
-    document.getElementById("swap_button").disabled = false;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-
 
 function openModal(side) {
   currentSelectSide = side;
@@ -136,7 +134,7 @@ function doSwap(userAddress, amount) {
   });
 }
 
-init();
+// init();
 
 document.getElementById("modal_close").onclick = closeModal;
 document.getElementById("from_token_select").onclick = () => {
@@ -145,7 +143,7 @@ document.getElementById("from_token_select").onclick = () => {
 document.getElementById("to_token_select").onclick = () => {
   openModal("to");
 };
-document.getElementById("login_button").onclick = login;
+// document.getElementById("login_button").onclick = login;
 document.getElementById("from_amount").onblur = getQuote;
 document.getElementById("swap_button").onclick = trySwap;
 
