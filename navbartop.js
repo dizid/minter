@@ -17,6 +17,7 @@ document.write(`
               <a class="nav-link" href="dex.html">DEX</a>
             </li>
             </ul>
+            <button id="logout_button" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Log out</button>
           <button id="login_button" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Sign in with Metamask</button>
     </div>
   </nav>

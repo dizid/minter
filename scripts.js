@@ -21,7 +21,7 @@ async function login() {
 }
 
 document.getElementById("login_button").onclick = login;
-// document.getElementById("logout-button").onclick = logOut;
+document.getElementById("logout_button").onclick = logOut;
 async function logOut() {
   await Moralis.User.logOut();
   console.log("logged out");
