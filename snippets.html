@@ -1,3 +1,48 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-   
+ 
+// Check IF Metamask address is in localstorage and show in Login button
+/* const MMaddress = localStorage.getItem("Metamask_address")
+let currentUser = Moralis.User.current();
+if (MMaddress && currentUser) {
+  document.querySelector('#login_button').innerText = localStorage.getItem("Metamask_address")
+  console.log("MM adres", MMaddress )
+  }
+  else  {
+    login()
+  } */
 
+  
+
+/** Add from here down */
+/* async function login() {
+  if (!currentUser) {
+   try {
+    currentUser = await Moralis.authenticate({ signingMessage: "You are connected with your wallet!" })
+      initApp();
+   } catch(error) {
+     console.log(error)
+   }
+  }
+  else{
+    Moralis.enableWeb3();
+    initApp();
+  }
+} */
+// TEST click button to change network. PS: 
+// change to rinkeby // TEST mumbai
+
+/** Login */
+/* async function login() {
+  let user = Moralis.User.current();
+  if (!user) {
+   try {
+      user = await Moralis.authenticate({ signingMessage: "Welcome to Dikke dApp" })
+      document.querySelector('#login_button').innerText = user.get('ethAddress');  // Show eth address in login button
+     localStorage.setItem("Metamask_address", user.get('ethAddress')) // Put Metamask address in localstorage
+      console.log("Moralis user: ", user)
+      console.log("user.get.('ethAddress'): ",user.get('ethAddress'))
+   } catch(error) {
+     console.log(error)
+   }
+  }
+} */

@@ -1,5 +1,8 @@
 /* Show & Share NFTs */
 // get NFTs for current user on Mainnet
+
+
+
 async function getNFTs() {
     const options = { chain: 'eth', address: '0x9aD20636BD158831B7cEBb3dbf0754648E8F6Bb1' };
     const nfts = await Moralis.Web3.getNFTs(options);
