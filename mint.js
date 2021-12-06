@@ -1,5 +1,5 @@
 /* Create NFT */
-async function submit(){
+async function createNFT(){
     document.getElementById('spinner').style.display = 'inline'  // MF show spinner
 
     const input = document.querySelector('#input_image')
