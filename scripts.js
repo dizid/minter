@@ -73,7 +73,7 @@ function monitorNetwork(){
     })
 }
 
-/* Switch network */
+/* Switch network (fired from onclick button id="switchNetwork" in mint.html*/
 async function switchNetwork (a) {
     if (a == 'rinkeby') {var MychainId = '0x4'
      localStorage.setItem("Blockchain", a)}
