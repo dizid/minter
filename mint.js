@@ -1,5 +1,12 @@
+
+
+ // Error: Missing web3 instance, make sure to call Moralis.enableWeb3() or Moralis.authenticate()
+
 /* Create NFT */
 async function createNFT(){
+    console.log("localstorgae getitem blockchain: ",localStorage.getItem("Blockchain"))
+    Moralis.enableWeb3()
+    let user = Moralis.User.current() /* TODO okay? define Moralis user OR currentUser ?? */
     document.getElementById('spinner').style.display = 'inline'  // MF show spinner
 
     const input = document.querySelector('#input_image')
@@ -20,8 +27,8 @@ async function createNFT(){
     let metadataHash = jsonFile.hash()
     console.log(jsonFile.ipfs())
     let res = await Moralis.Plugins.rarible.lazyMint({
-        chain:  localStorage.getItem("Blockchain"),
-        userAddress: user.get('ethAddress'),
+        chain:  localStorage.getItem("Blockchain"), 
+        userAddress: user.get('ethAddress'), 
         tokenType: 'ERC721',
         tokenUri: 'ipfs://' + metadataHash,
         royaltiesAmount: 500, // 5% royalty
