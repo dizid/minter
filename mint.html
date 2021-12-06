@@ -22,22 +22,12 @@
       </div>
   </div>
           <div class="container">
-          <br>
-            <div class="row">
-                <div class="title">Magic Minter</div><br><br>
-
-            <div>
-              For testing, we use the Ethereum Rinkeby test blockchain and also the testsite from Rarible NFT marketplace.<br>
-                    1. Click here to <button class="btn btn-primary" onclick="switchNetworkMumbai()">put Metamask on Rinkeby</button><br>
-                    2. Go to <a href="https://faucets.chain.link/rinkeb" target="blanc">the faucet</a> for free 0.1 ETH. (select Rinkeby)<br>
-                    3. <b>Create your NFT! below in the form</b><br>
-                    4. Your NFT shows on <a href="https://rinkeby.rarible.com/" target="blanc">Rarible</a> (login with Metamask on Rinkeby).<br>
-                    5. PS: Your NFT 'lazy minted': the buyer has to mint it (and pay network fees).
-           </div><br><br>
-
-                <div id="app" class="col-md-6 offset-md-3">
+             <div class="row">
+                <div class="title">Magic Minter - Create your NFT for Free</div><br><br>
+             </div><hr>
+                      <div id="app" class="col-md-6 offset-md-3">
                     <div id="success_message">
-                        
+                     
                     </div>
                     <div class="form_element">
                     <input class="form-control type="text" id="input_name" name="name" placeholder="Token name">
@@ -54,7 +44,13 @@
                     <div id="spinner" style="display: none;">
                       <img id="img-spinner" src="spinner.gif" alt="Creating NFT">
                     </div>
-                </div>
+                </div><hr>
+                <div>
+                  1. For testing: <button class="btn btn-primary btn-sm" onclick="switchNetwork('rinkeby')">put Metamask on Rinkeby</button>. 
+                  <a href="https://faucets.chain.link/rinkeby" target="blanc">Get for free 0.1 test ETH.</a><br>
+                  2. For real: <button class="btn btn-primary btn-sm" onclick="switchNetwork('eth')">Put Metamask on Ethereum</button><br>
+                  3. <b>Create your NFT! below in the form</b>. Your NFT 'lazy minted': the buyer has to mint it.
+         </div>
             </div>
         </div><br>
       

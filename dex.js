@@ -2,32 +2,6 @@ let currentTrade = {};
 let currentSelectSide;
 let tokens;
 // MF: let blockchain = bsc  // options now: eth, bsc, polygon. Later: avalanche, solana, ...
- 
-/* async function init() {
-  await Moralis.start({ serverUrl, appId });
-  await Moralis.enableWeb3();
-  await listAvailableTokens();
-  currentUser = Moralis.User.current();
-  if (currentUser) {
-    document.getElementById("swap_button").disabled = false;
-  }
-} */
-
-/* async function login() {
-  try {
-    currentUser = Moralis.User.current();
-   // console.log(user.get('ethAddress')) // TODO TEST remove later
-
-    if (!currentUser) {
-      currentUser = await Moralis.authenticate().then(function (user) {
-        console.log(user.get('ethAddress'))
-      })
-    }
-    document.getElementById("swap_button").disabled = false;
-  } catch (error) {
-    console.log(error);
-  }
-} */
 
 async function listAvailableTokens() {
   const result = await Moralis.Plugins.oneInch.getSupportedTokens({

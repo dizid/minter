@@ -13,14 +13,13 @@ async function login() {
       user = await Moralis.authenticate({ signingMessage: "Welcome to Dikke dApp" })
       document.querySelector('#login_button').innerText = user.get('ethAddress');  // Show eth address in login button
      localStorage.setItem("Metamask_address", user.get('ethAddress')) // Put Metamask address in localstorage
-      console.log(user)
-      console.log(user.get('ethAddress'))
+      console.log("Moralis user: ", user)
+      console.log("user.get.('ethAddress'): ",user.get('ethAddress'))
    } catch(error) {
      console.log(error)
    }
   }
 }
-
 
 //Check IF Metamask address is in localstorage and show in Login button
 const MMaddress = localStorage.getItem("Metamask_address")
@@ -41,7 +40,7 @@ async function logOut() {
 }
 
 document.getElementById("login_button").onclick = login;
-// document.getElementById("logout_button").onclick = logOut;
+document.getElementById("logout_button").onclick = logOut;
 
 /* CHECK and report on which CHAIN we are connected to */
 var web3;
@@ -90,4 +89,8 @@ function monitorNetwork(){
     })
 }
 
+/* CHECK if user has changed Metamask account */
+// function monitorMMaccount() {
+//     if (MMaddress != )
+// }
 
